@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Countdown Timer";
+}
+
+<div id="countdownForm" class="text-lg-center">
+    <form method="post" class="text-center">
+        <h2>
+            <label>Enter Your Date: </label>
+            <input type="date" name="userDate" />
+        </h2>
+        <br />
+        <input type="submit" value="Get # of Days" class="btn btn-primary" />
+    </form>
+</div>
+
+@if (ViewData["countdown"].ToString() != string.Empty)
+{
+    <div class="text-lg-center">
+        <h2 class="text-center">
+            Days until @ViewData["dateEntered"]: <br />
+            <b>@ViewData["countdown"]</b>
+        </h2>
+    </div>
+}
